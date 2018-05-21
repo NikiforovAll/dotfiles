@@ -6,7 +6,4 @@
 (manual) - needed to be installed manually
 
 ## List of installations
-
-### general
-
-### dev
+dotnetframework-dev-tools.ps1 - contains VS2010, SQL Management studio and IIS
