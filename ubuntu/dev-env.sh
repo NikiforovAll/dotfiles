@@ -2,6 +2,7 @@
 declare -a programs=("code"
                      "tree"
                      "curl"
+                     "xclip"
                      "git"
                      "nodejs"
                      "npm"
@@ -40,6 +41,13 @@ echo "${installations[$currprogram]}"
 if [ "${installations[$currprogram]}" = "1" ]; then
   sudo apt-get install curl 
 fi
+
+currprogram="xclip"
+echo "${installations[$currprogram]}"
+if [ "${installations[$currprogram]}" = "1" ]; then
+  sudo apt-get install curl 
+fi
+
 
 currprogram="tree"
 if [ "${installations[$currprogram]}" = "1" ]; then
