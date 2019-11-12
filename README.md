@@ -1,26 +1,16 @@
-# Dotfiles for Windows (PowerShell, WSL)
+Dotfiles for Windows (PowerShell, WSL, Git Bash - ?)
+============================================================
 
-## Goals for setup
+Goals of this setup
+-------------------
 
-* Having a visually nice terminal: Windows Terminal
-  * custom profiles
-  * Cascadia Code
-* zsh as main shell
-* tmux
-* git and configuration
-* dev tools/utilities
-  * git
-    * git auto-completion
-    * git config
-    * git aliases
-  * npm
-  * nodejs
-  * docker*
-* vscode
-* dotnet global tools
+- target platform: Windows 10
+- visually nice terminal: Windows Terminal
+- zsh as main shell
 
-## General
+Install
+--------
 
-## Setup
+### Windows
 
-## Customize
+### WSL
