@@ -1,14 +1,13 @@
 # 1-SETUP: Enable WSL
 
-## Prerequisites:
+## Prerequisites
 
 * Windows 10
 
 ## Goal
 
-* enable wsl
-* install linux distro
-* install windows terminal
+* Enable wsl
+* Install linux distro
 
 ## Steps
 
@@ -19,13 +18,9 @@
   * [Enable WSL (Ubuntu)](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 * Updating to WSL2
   * `Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`
-<!-- * Install docker
-  * [Install Docker for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows) -->
+* If you want to make wsl2 as default architecture: `wsl --set-default-version 2`
 
-### Install linux distro
+### Install linux distro of your flavour
 
-### Install windows terminal
-
-* Having a visually nice terminal: Windows Terminal
-  * custom profiles
-  * Cascadia Code
+* `curl.exe -L -o ubuntu.appx https://aka.ms/wsl-ubuntu`
+* Launch Ubuntu.exe from the Start Menu. You’ll be asked to enter a username and password (for sudo stuff).
