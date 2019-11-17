@@ -6,9 +6,10 @@ Goals of this setup
 
 - target platform: Windows 10
 - visually nice terminal: Windows Terminal
-- zsh as main shell
-- powershell: oh-my-posh
-- git bash
+- vscode: settings sync
+- main shell: zsh
+- shell: powershell + oh-my-posh + custom theme
+- shell: git bash
 
 Install
 --------
@@ -19,3 +20,7 @@ Install
 
 ### WSL
 * TODO: place what should be done for wsl here
+
+## Resources
+
+For more deatils please see related blog post: TODO:

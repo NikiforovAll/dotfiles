@@ -1,0 +1,30 @@
+dotnet-script
+DotnetCleanup
+coverlet
+dotnet-doc
+Scaffolding
+depends
+cake
+GitVersion
+DashDashVersion
+dotnet-search
+dotnet-serve
+dotnet-server
+try
+dotnet-giio
+dotnet-gitreleasemanager
+# * <https://github.com/filipw/dotnet-script>
+# * <https://github.com/sebnilsson/DotnetCleanup>
+# * <https://github.com/tonerdo/coverlet>
+# * <https://github.com/spboyer/dotnet-doc>
+# * <https://github.com/aspnet/Scaffolding>
+# * <https://github.com/mholo65/depends>
+# * <https://github.com/cake-build/cake>
+# * dotnet-giio
+# * <https://github.com/GitTools/GitVersion>
+# * <https://github.com/hightechict/DashDashVersion>
+# * dotnet-gitreleasemanager
+# * <https://github.com/billpratt/dotnet-search>
+# * <https://github.com/natemcmaster/dotnet-serve>
+# * <https://github.com/joro550/dotnet-server>
+# * <https://github.com/dotnet/try>

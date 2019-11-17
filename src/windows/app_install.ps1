@@ -11,9 +11,9 @@ function Check-Command($cmdname) {
 
 # -----------------------------------------------------------------------------
 # Set a new computer name
-$computerName = Read-Host 'Enter New Computer Name'
-Write-Host "Renaming this computer to: " $computerName  -ForegroundColor Yellow
-Rename-Computer -NewName $computerName
+# $computerName = Read-Host 'Enter New Computer Name'
+# Write-Host "Renaming this computer to: " $computerName  -ForegroundColor Yellow
+# Rename-Computer -NewName $computerName
 
 # -----------------------------------------------------------------------------
 # Remove a few pre-installed UWP applications
@@ -77,17 +77,32 @@ else {
   choco install nodejs-lts -y
 }
 
-choco install googlechrome -y
+# -----------------------------------------------------------------------------
+# Install packages: choco
+Write-Host "Installing Apps via chocolatey package manager..." -ForegroundColor Green
+
+# VSCODE
 choco install vscode -y
+code --intall-extension Shan.code-settings-sync
+
 choco install firacode-ttf -y
-choco install cascadiacode
-choco install microsoft-windows-terminal
+choco install cascadiacode -y
+choco install googlechrome -y
+choco install microsoft-windows-terminal -y
 
 # -----------------------------------------------------------------------------
-# Install oh-my-posh and change Set-ExecutionPolicy to "Unrestricted"
+# Install modules and change Set-ExecutionPolicy to "Unrestricted"
 Install-Module posh-git -Scope CurrentUser
 Install-Module oh-my-posh -Scope CurrentUser
+Install-Module -AllowClobber Get-ChildItemColor
+Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
+
+# -----------------------------------------------------------------------------
+# Install dotnet sdk
+
+Write-Host "Installing dotnet SDKs for Windows..." -ForegroundColor Green
+powershell -NoProfile -ExecutionPolicy unrestricted -Command "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; &([scriptblock]::Create((Invoke-WebRequest -UseBasicParsing 'https://dot.net/v1/dotnet-install.ps1'))) -Channel LTS"
 
 
 # -----------------------------------------------------------------------------
