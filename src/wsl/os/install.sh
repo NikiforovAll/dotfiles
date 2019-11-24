@@ -91,11 +91,12 @@ main() {
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     printf "%s" "${BASH_SOURCE[0]}" | grep "install.sh" &> /dev/null \
       || download_dotfiles
-
+    # NOTE: this one changes working directory to install repo
+    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     ./create_directories.sh
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # ./create_symbolic_links.sh "$@"
+    ./create_symbolic_links.sh "$@"
 
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

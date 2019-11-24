@@ -1,0 +1,183 @@
+[user]
+	name = NikiforovAll
+	email = nikiforovalekcey@gmail.com
+[alias]
+    #find all direct children of given refs
+    #code borrowed from https://gist.github.com/kohsuke/7590246
+    child = "!f() { for arg in \"$@\"; do for commit in $(git rev-parse $arg^0); do for child in $(git log --format='%H %P' --all | grep -F \" $commit\" | cut -f1 -d' '); do git describe $child 2> /dev/null || echo $child; done; done; done; }; f"
+    # ============================ Add&Commit
+    # Shorthand for add
+    a = add
+    # Add all unstaged (including untracked) files.
+    # See`git help add`
+    aa = add --all
+    # See`git help add`
+    ai = add --interactive
+    undo-commit = reset --soft HEAD~1
+    ac = !git add . && git commit -am
+    # Amend the currently staged files to the last commit
+    # See`git help commit`
+    amend = commit --amend --reuse-message=HEAD
+    # Shorthand for commit
+    c = commit -m                     # commit with message
+    ca = commit -am                   # commit all with message
+    cam = commit -am                  # "same as ca"
+    ci = commit                       # commit
+    # ============================ Branch
+    b = branch
+    # ============================ Merge
+    # Shorthand for merge
+    m = merge
+
+    # ============================Grabbing
+    # Pull in remote changes for the current repository and all its submodules
+    p = !"git pull; git submodule foreach git pull origin master"
+    # Shorthand for fetch
+    f = fetch
+    # grab a change from a branch
+    cp = cherry-pick -x
+    # pull
+    pl = pull
+    # push
+    ps = push
+    # Create a new remote branch with the same name and track it.
+    # First argument is remote name. Defaults to "origin".
+    # Second, third and fourth argument are passed to `git push`.
+    publish = "!p() { [ -z \"$1\" ] && remote=\"origin\" || remote=$1; git push --set-upstream $2 $3 $4 $remote HEAD; }; p"
+    # Shorthand for remote (verbose)
+    r = remote -v
+    # ============================Status
+    s = status -s
+    st = status
+    co = checkout
+    cob = checkout -b
+    # list branches sorted by last modified
+    b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+    # List aliases
+    aliases = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+	la = "!git config -l | grep alias | cut -c 7-"
+    #=============================Stash
+    # stash
+    ss = stash                        # stash changes
+    sl = stash list                   # list stashes
+    sa = stash apply                  # apply stash (restore changes)
+    sd = stash drop                   # drop stashes (destory changes)
+    # ============================Diff
+    # diff
+    d = diff                          # diff unstaged changes
+    dc = diff --cached                # diff staged changes
+    da = diff HEAD                # diff unstaged and staged changes
+    # Show all conflicted files
+    diff-conflicted-files = diff --name-only --diff-filter=U
+    # Show the diff between the latest commit and the current state
+    diff-to-latest-commit = "!git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    # Show a commit-hash diff between two branches
+    diff-commit-hash-to-branch = "!git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $1"
+    # `git diff-to-x-commit $number` shows the diff between the state `$number` revisions ago and the current state
+    diff-to-x-commit = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+    # ============================Other
+    # Shorthand for config
+    # See`git help config` for config options
+    cn = config
+    # Shorthand for global config
+    cng = config --global
+    # List contributors with number of commits
+    # See`git help shortlog`
+    contributors = shortlog --summary --numbered
+    # Credit an author on the latest commit
+    credit = "!f() { git commit --amend --author \"$1 <$2>\" --reuse-message=HEAD; }; f"
+    # Merge GitHub pull request on top of the current branch or,
+    # if a branch name is specified, on top of the specified branch.
+
+    # mpr = "!f() { \
+    #     declare currentBranch=\"$(git symbolic-ref --short HEAD)\"; \
+    #     declare branch=\"${2:-$currentBranch}\"; \
+    #     if [ $(printf \"%s\" \"$1\" | grep '^[0-9]\\+$' > /dev/null; printf $?) -eq 0 ]; then \
+    #         git fetch origin refs/pull/$1/head:pr/$1 && \
+    #         git checkout -B $branch && \
+    #         git rebase $branch pr/$1 && \
+    #         git checkout -B $branch && \
+    #         git merge pr/$1 && \
+    #         git branch -D pr/$1 && \
+    #         git commit --amend -m \"$(git log -1 --pretty=%B)\n\nClose #$1\"; \
+    #     fi \
+    # }; f"
+    # ============================ LOG
+    ##
+    # Creates an alias called "git hist" that outputs a nicely formatted git log.
+    # Usage is just like "git log"
+    # Examples:
+    #   git hist
+    #   git hist -5
+    #   git hist <branch_name>
+    #   git hist <tag_name> -10
+    ##
+    hist = "log --pretty=format:'%C(yellow)[%ad]%C(reset) %C(green)[%h]%C(reset) | %C(red)%s %C(bold red){{%an}}%C(reset) %C(blue)%d%C(reset)' --graph --date=short"
+    l = log --graph --decorate --pretty=oneline --abbrev-commit -n 10
+    ll = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    lll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
+    short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
+    simple = log --pretty=format:\" * %s\"
+    shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
+    overview = log --all --oneline --no-merges
+    changelog = "!sh -c \"git log --oneline --no-merges $1..HEAD\" -"
+    filelog = log -u # show changes to a file
+    # Pretty log of commits. Supports options of git log
+    # https://www.kernel.org/pub/software/scm/git/docs/git-log.html#_pretty_formats
+    log-pretty = log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %aE>%Creset' --abbrev-commit
+    # Pretty log of commits from origin/master
+    log-origin-master = log --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %aE>%Creset' --abbrev-commit --no-merges origin/master
+    # last commit
+    last = log -1 HEAD
+    # ==============================Find
+    # Find branches containing commit
+    fb = "!f() { git branch -a --contains $1; }; f"
+    # Find commits by source code
+    fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+    # Find commits by commit message
+    fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+    # Find tags containing commit
+    ft = "!f() { git describe --always --contains $1; }; f"
+    # find a string in the entire git history
+    search-git-history = "!r() { git rev-list --all | xargs git grep -F $1; }; r"
+[diff]
+	tool = vscode
+[difftool]
+	prompt = false
+[difftool "vscode"]
+	cmd = \"C:\\Program Files\\Microsoft VS Code\\Code.exe\" \"$LOCAL\" \"$REMOTE\" --diff --wait
+	trustExitCode = false
+# URL shorthands
+#
+# See `git help config` and search for "url.<base>"
+#
+# gh: is a shorthand for git@github.com
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "git://github.com/"
+
+# github: is a shorthand for git://github.com/
+[url "git://github.com/"]
+    insteadOf = "github:"
+
+# gst: is a shorthand for git://gist.github.com/
+[url "git@gist.github.com:"]
+    insteadOf = "gst:"
+    pushInsteadOf = "gist:"
+    pushInsteadOf = "git://gist.github.com/"
+
+# gist: is a shofthand for git://gist.github.com/
+[url "git://gist.github.com/"]
+    insteadOf = "gist:"
+[log]
+    decorate = short
+[pager]
+    color = true
+    log  = diffr | less -R
+    show = diffr | less -R
+    diff = diffr | less -R
+[interactive]
+    diffFilter = diffr
