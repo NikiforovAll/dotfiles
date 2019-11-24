@@ -168,7 +168,7 @@ download_dotfiles() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    cd "$dotfilesDirectory/src/wsl" \
+    cd "$dotfilesDirectory/src/wsl/os" \
         || return 1
 
 }
