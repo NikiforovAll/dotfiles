@@ -4,10 +4,10 @@ Dotfiles for Windows (PowerShell, WSL, Git Bash)
 Goals of this setup
 -------------------
 
-- 💻target platform: Windows 10
-- ⌨visually nice terminal: Windows Terminal
+- target platform: Windows 10
+- visually nice terminal: Windows Terminal
 - vscode: settings sync
-- 🐚 main shell: zsh
+- main shell: zsh
 - shell: powershell + oh-my-posh + custom theme
 - shell: git bash
 
@@ -33,8 +33,10 @@ Setup
 #### ZSH
 
 #### Git
+
 * .gitconfig
 * **!** Change user in git/gitconfig
+
 #### ZSH
 * .zshrc
 #### Dotnet
