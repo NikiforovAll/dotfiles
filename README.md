@@ -28,7 +28,7 @@ Setup
 
 | OS | Snippet |
 |:---|:---|
-| `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/setup.sh)"` |
+| `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
 
 (⚠️  **DO NOT** run the `setup` snippet if you do not fully understand
 [what it does][setup]. Seriously, **DON'T**!)
