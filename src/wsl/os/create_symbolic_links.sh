@@ -14,9 +14,12 @@ create_symlinks() {
         "shell/bash_prompt"
         # "shell/inputrc"
 
+        "shell/zshrc"
+
         "git/gitattributes"
         "git/gitconfig"
         "git/gitignore"
+
 
         # "tmux/tmux.conf"
 

@@ -11,9 +11,13 @@ export DEBIAN_FRONTEND=noninteractive
 print_in_purple "\n   zsh\n\n"
 install_package "zsh" "zsh"
 chsh -s /bin/zsh
-
 print_in_purple "\n   oh-my-zsh\n\n"
+execute "curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh"
 
+
+print_in_purple "\n   oh-my-zsh.theme\n\n"
+execute "git clone https://github.com/denysdovhan/spaceship-prompt.git $ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 #  Git
 print_in_purple "\n   git\n\n"
 install_package "Git" "git"
