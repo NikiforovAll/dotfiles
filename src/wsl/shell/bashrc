@@ -1,4 +1,9 @@
 #!/bin/bash
 
-source ~/.bash_profile
-source ~/.bash_prompt
+if [ -s ~/.bash_profile ]; then
+    source ~/.bash_profile;
+fi
+
+if [ -s ~/.bash_prompt ]; then
+    source ~/.bash_prompt;
+fi

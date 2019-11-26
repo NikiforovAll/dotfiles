@@ -96,14 +96,6 @@ main() {
     ./create_directories.sh
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./create_symbolic_links.sh "$@"
-
-    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # ./create_local_config_files.sh
-
-    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     # ./install/main.sh
     seek_confirmation "Warning: This step install applications."
     if is_confirmed; then
@@ -113,6 +105,14 @@ main() {
     else
       e_warning "Skipped applications install."
     fi
+    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    ./create_symbolic_links.sh "$@"
+
+    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # ./create_local_config_files.sh
+
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # if ! $skipQuestions; then

@@ -46,10 +46,11 @@ Setup
 * docker
 * docker compose
 * Configuration to expose docker to windows deamon
-*
 TODO: https://github.com/dotnet/cli/blob/master/scripts/register-completions.zsh
 TODO: completion for docker, docker-compose
 
+TODO: install powerline fonts to host OS
+    * + adjust wt_profile.json to reflect changes
 ## Resources
 
 TODO:
