@@ -7,16 +7,16 @@ cd "$(dirname "${BASH_SOURCE[0]}")" \
 
 install() {
     # ZSH
+    print_in_purple "\n   zsh\n\n"
     install_package "zsh" "zsh"
     print_in_purple "\n   oh-my-zsh\n\n"
     ZSH="$HOME/.oh-my-zsh"
     if [[ ! -d $ZSH ]]; then
-        execute "sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" --unattended"
-        # sh -c \"\$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\" --unattended
-        chsh -s /bin/zsh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     else
         print_in_yellow "\n   using local version of oh-my-zsh\n"
     fi
+    chsh -s $(which zsh)
     ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     ZSH_THEME_TO_INSTALL="$ZSH_CUSTOM/themes/spaceship-prompt"
     ZSH_THEME_TO_SYMLINK="$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -40,7 +40,6 @@ install() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
-    print_in_purple "\n   zsh\n\n"
     install
 }
 

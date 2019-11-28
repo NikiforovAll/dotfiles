@@ -5,6 +5,7 @@ declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/master"
 declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/master/src/wsl/os/utils.sh"
 declare dotfilesDirectory="$HOME/projects/dotfiles"
+# declare DOTFILES_DIRECTORY="$HOME/projects/dotfiles"
 declare skipQuestions=false
 # ----------------------------------------------------------------------
 # | Helper Functions (you might want to go right to *main* part)       |
@@ -93,20 +94,25 @@ main() {
       || download_dotfiles
     # NOTE: this one changes working directory to install repo
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # TODO: change this, this mofo is dangerous
+    find . -name "*.sh" -exec chmod +x {} +
+    # sudo chmod +x ./create_directories.sh
     ./create_directories.sh
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     # ./install/main.sh
     seek_confirmation "Warning: This step install applications."
     if is_confirmed; then
-      e_header "Please, configure you applications before installation:"
-      nano ${DOTFILES_DIRECTORY}/app_install.sh
-      bash $DOTFILES_DIRECTORY/app_install.sh
+      # e_header "Please, configure you applications before installation:"
+      # bash "$DOTFILES_DIRECTORY/app_install.sh"
+      # sudo chmod +x ./app_install.sh
+      ./app_install.sh
+
     else
       e_warning "Skipped applications install."
     fi
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+    # sudo chmod +x ./create_symbolic_links.sh "$@"
     ./create_symbolic_links.sh "$@"
 
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

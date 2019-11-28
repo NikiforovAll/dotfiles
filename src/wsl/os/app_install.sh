@@ -12,20 +12,30 @@ export DEBIAN_FRONTEND=noninteractive
 print_in_purple "\n   git\n\n"
 install_package "Git" "git"
 # ZSH
-execute "./install-zsh.sh"
+./install-zsh.sh
 # nodejs
 #------------------------------------------------
+
 print_in_purple "\n   node\n\n"
-execute "curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash - &>/dev/null" "updating node based on https://deb.nodesource.com/setup_13.x"
-install_package "nodejs" "nodejs"
+if which node > /dev/null
+    then
+        print_in_yellow "\n   node is installed, skipping..."
+    else
+    execute "curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash - &>/dev/null" "updating node based on https://deb.nodesource.com/setup_13.x"
+    install_package "nodejs" "nodejs"
+fi
+
 # fixing nodejs for ubuntu
 #
-ln -s /usr/bin/nodejs /usr/bin/node
+# ln -s /usr/bin/nodejs /usr/bin/node
 print_in_purple "\n   NPM\n\n"
-install_npm_package "npm"
+install_npm_package "npm" "npm"
 
 print_in_purple "\n   yo\n\n"
-install_npm_package "yo"
+install_npm_package "yo" "yo"
+
+print_in_purple "\n   jira-cmd\n\n"
+install_npm_package "jira-cmd" "jira-cmd"
 
 print_in_purple "\n   unzip\n\n"
 install_package "zip" "unzip"
@@ -61,10 +71,6 @@ execute "cargo install diffr"
 
 print_in_purple "\n   GNOME vim\n\n"
 install_package "GNOME Vim" "vim-gnome"
-# ------------------------------------------------
-print_in_purple "\n   jira-cmd\n\n"
-
-install_npm_package "jira-cmd"
 
 print_in_purple "\n   $EXA_BUILD\n\n"
 EXA_BUILD="exa-linux-x86_64"

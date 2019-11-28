@@ -20,7 +20,7 @@
   * `Enable-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`
 * If you want to make wsl2 as default architecture: `wsl --set-default-version 2`
 
-### Install linux distro of your flavour
+<!-- ### Install linux distro of your flavour
 
 * `curl.exe -L -o ubuntu.appx https://aka.ms/wsl-ubuntu`
-* Launch Ubuntu.exe from the Start Menu. You’ll be asked to enter a username and password (for sudo stuff).
+* Launch Ubuntu.exe from the Start Menu. You’ll be asked to enter a username and password (for sudo stuff). -->

@@ -30,19 +30,7 @@ Setup
 | OS | Snippet |
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
-#### Git
-
-#### Docker
-* docker
-* docker compose
-* Configuration to expose docker to windows deamon
-TODO: https://github.com/dotnet/cli/blob/master/scripts/register-completions.zsh
-
 ## Resources
 
 TODO:
 For more details please see related blog post:
-
-
-# UPDATE
-TODO:

@@ -1,12 +1,14 @@
 #!/bin/bash
 source ./utils.sh
 
-seek_confirmation "Warning: Are you sure you want to install?"
+print_in_purple "\n   install-dotnet-global-tools\n\n"
+dotnet_tools_list_path="$dotfilesDirectory/artifacts/dotnet-tools.list"
+grep -v '^#' $dotnet_tools_list_path
+seek_confirmation "Warning: Are you sure you want to install next global tools?"
+
 if is_confirmed; then
-    dotnet_tools_list_path='../../../artifacts/dotnet-tools.list'
-    grep -v '^#' $dotnet_tools_list_path
     grep -v '^#' $dotnet_tools_list_path | while read -r item ; do
-        dotnet tool install -g $item
+        execute "dotnet tool install -g $item"
     done
 else
     e_warning "Skipped installation step."
