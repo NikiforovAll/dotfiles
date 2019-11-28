@@ -1,6 +1,3 @@
-[user]
-	name = NikiforovAll
-	email = nikiforovalekcey@gmail.com
 [alias]
     #find all direct children of given refs
     #code borrowed from https://gist.github.com/kohsuke/7590246

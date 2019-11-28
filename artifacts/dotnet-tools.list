@@ -14,6 +14,7 @@ try
 dotnet-giio
 dotnet-gitreleasemanager
 dotnet-reportgenerator-globaltool
+ilspycmd
 # * <https://github.com/filipw/dotnet-script>
 # * <https://github.com/sebnilsson/DotnetCleanup>
 # * <https://github.com/tonerdo/coverlet>
@@ -29,4 +30,5 @@ dotnet-reportgenerator-globaltool
 # * <https://github.com/natemcmaster/dotnet-serve>
 # * <https://github.com/joro550/dotnet-server>
 # * <https://github.com/dotnet/try>
+# * <https://github.com/icsharpcode/ILSpy/tree/master/ICSharpCode.Decompiler.Console>
 # * https://github.com/danielpalme/ReportGenerator

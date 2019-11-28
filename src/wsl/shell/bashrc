@@ -3,7 +3,3 @@
 if [ -s ~/.bash_profile ]; then
     source ~/.bash_profile;
 fi
-
-if [ -s ~/.bash_prompt ]; then
-    source ~/.bash_prompt;
-fi

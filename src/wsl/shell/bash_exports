@@ -1,0 +1,21 @@
+
+#!/bin/bash
+
+# ============================ EXPORTS
+export LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+export DOCKER_HOST="tcp://localhost:2375"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+export MANPAGER="less -X"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Use custom `less` colors for `man` pages.
+export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
+export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Make Python use UTF-8 encoding for output to stdin/stdout/stderr.
+export PYTHONIOENCODING="UTF-8"

@@ -1,0 +1,113 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/nikiforovall/.oh-my-zsh"
+
+ZSH_THEME="spaceship"
+SPACESHIP_EXIT_CODE_SHOW=true
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  dotnet        # .NET section
+  git           # Git section (git_branch + git_status)
+  package       # Package version
+  node          # Node.js section
+  docker        # Docker section
+  exec_time     # Execution time
+  line_sep      # Line break
+  battery       # Battery level and status
+  exit_code     # Exit code section
+  char
+)
+SPACESHIP_TIME_SHOW=true
+SPACESHIP_RPROMPT_ORDER=(
+    dotnet
+    time          # Time stamps section
+)
+
+
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+    # Extract any archive file
+    extract
+    #Keeps track of the last used directory and automatically jumps to it for new shells. Similar to how many terminal emulators does it.
+    last-working-dir
+    command-not-found
+    #Collection of useful zsh aliases
+    common-aliases
+    # Copies content of a file into clipboard
+    copyfile
+    # Auto complete arguments and options for all docker commands.
+    # FIX: https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
+    docker
+    # This is a plugin that helps to encode/decode strings with base64 from the console quickly:
+    encode64
+    # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/
+    git
+    ng
+    # _ESC_ twice: Puts sudo in front of the current command, or the last one if the command line is empty.
+    sudo
+    tmux
+    # This plugin makes interaction between the command line and the code editor easier.
+    vscode
+    # Adds several commands to do web search. (e.g. google, bing, ddg)
+    web-search
+    # Change directory based on history for example if you previously used (aka fuzzy path expansion)
+    z
+    history
+    # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#jsontools
+    jsontools
+    # npm - adds autocompletion to npm
+    npm
+    git-flow
+    # zsh-syntax-highlighting (like in fish shell)
+    zsh-autosuggestions
+)
+# https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
+fpath+=($ZSH/plugins/docker)
+autoload -U compinit && compinit
+
+source $ZSH/oh-my-zsh.sh
+ZSH_DISABLE_COMPFIX=true
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # not the best way to reference this guy TODO: change.
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="cat ~/.zshrc | $PAGER"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source_shell_files() {
+    declare -r CURRENT_DIRECTORY="$(pwd)"
+    declare -r -a FILES_TO_SOURCE=(
+        "shell_aliases"
+        "shell_functions"
+        # "bash.local"
+    )
+    # local file=""
+    # local i=""
+    # for i in ${!FILES_TO_SOURCE[*]}; do
+    for i in $FILES_TO_SOURCE; do
+        file="$HOME/.$i"
+        [ -r "$file" ] \
+            && . "$file"
+    done
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    cd "$CURRENT_DIRECTORY"
+}
+
+source_shell_files
+unset -f source_shell_files

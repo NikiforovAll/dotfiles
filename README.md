@@ -30,27 +30,14 @@ Setup
 | OS | Snippet |
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
-#### ZSH
-
 #### Git
 
-* .gitconfig
-* **!** Change user in git/gitconfig
-
-#### ZSH
-* .zshrc
-#### Dotnet
-* dotnet sdk / dotnet runtime
-* dotnet global tools `see artifacts/dotnet-tools.list`
 #### Docker
 * docker
 * docker compose
 * Configuration to expose docker to windows deamon
 TODO: https://github.com/dotnet/cli/blob/master/scripts/register-completions.zsh
-TODO: completion for docker, docker-compose
 
-TODO: install powerline fonts to host OS
-    * + adjust wt_profile.json to reflect changes
 ## Resources
 
 TODO:

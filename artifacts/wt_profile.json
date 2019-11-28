@@ -19,6 +19,18 @@
         ]
       },
       {
+        "command": "copy",
+        "keys": [
+          "ctrl+shift+c"
+        ]
+      },
+      {
+        "command": "paste",
+        "keys": [
+          "ctrl+shift+v"
+        ]
+      },
+      {
         "command": "newTabProfile0",
         "keys": [
           "ctrl+shift+1"
@@ -170,15 +182,21 @@
       },
       {
         "command": "closeWindow",
-        "keys": [ "alt+f4" ]
+        "keys": [
+          "alt+f4"
+        ]
       },
       {
         "command": "splitHorizontal",
-        "keys": [ "ctrl+-" ]
+        "keys": [
+          "ctrl+-"
+        ]
       },
       {
         "command": "splitVertical",
-        "keys": [ "ctrl+\\" ]
+        "keys": [
+          "ctrl+\\"
+        ]
       }
     ],
     "requestedTheme": "system",
@@ -189,11 +207,11 @@
     {
       "tabTitle": "Git Bash",
       "closeOnExit": true,
-      "colorScheme": "Campbell",
       "commandline": "C:/Program Files/Git/bin/bash.exe --login",
       "cursorColor": "#FFFFFF",
       "cursorShape": "bar",
-      "fontFace": "Cascadia Code",
+      "colorScheme": "Campbell",
+      "fontFace": "Cascadia Code PL",
       "fontSize": 12,
       "guid": "{14ad203f-52cc-4110-90d6-d96e0f41b64d}",
       "historySize": 9001,
@@ -207,7 +225,7 @@
       "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
       "hidden": false,
       "name": "Ubuntu",
-      "fontFace": "Cascadia Code",
+      "fontFace": "Cascadia Code PL",
       "colorScheme": "One Half Dark",
       "closeOnExit": true,
       "fontSize": 12,
@@ -250,7 +268,6 @@
       "name": "Azure Cloud Shell",
       "source": "Windows.Terminal.Azure"
     }
-
   ],
   "schemes": [
     {
@@ -275,6 +292,7 @@
       "yellow": "#C19C00"
     },
     {
+      "name": "One Half Dark",
       "background": "#282C34",
       "black": "#282C34",
       "blue": "#61AFEF",
@@ -288,8 +306,7 @@
       "brightYellow": "#E5C07B",
       "cyan": "#56B6C2",
       "foreground": "#DCDFE4",
-      "green": "#98C379",
-      "name": "One Half Dark",
+      "green": "#435f30",
       "purple": "#C678DD",
       "red": "#E06C75",
       "white": "#DCDFE4",
