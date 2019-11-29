@@ -23,11 +23,10 @@ source_shell_files() {
     #     && . "../os/utils.sh"
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+    echo $file
     for i in ${!FILES_TO_SOURCE[*]}; do
 
         file="$HOME/.${FILES_TO_SOURCE[$i]}"
-
         [ -r "$file" ] \
             && . "$file"
 

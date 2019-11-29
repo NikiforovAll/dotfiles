@@ -5,7 +5,9 @@
 export LANG="en_US"
 export LC_ALL="en_US.UTF-8"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+export PATH="$PATH:~/.dotnet"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 export DOCKER_HOST="tcp://localhost:2375"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

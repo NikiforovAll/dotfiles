@@ -27,11 +27,6 @@ SPACESHIP_RPROMPT_ORDER=(
     time          # Time stamps section
 )
 
-
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
     # Extract any archive file
     extract
@@ -68,14 +63,16 @@ plugins=(
     # zsh-syntax-highlighting (like in fish shell)
     zsh-autosuggestions
 )
+# TODO:
 # https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
-fpath+=($ZSH/plugins/docker)
-autoload -U compinit && compinit
+# fpath+=($ZSH/plugins/docker)
+# autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
-ZSH_DISABLE_COMPFIX=true
+ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # not the best way to reference this guy TODO: change.
+# not the best way to reference this guy TODO: change.
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -87,7 +84,19 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh # not the 
 #
 # Example aliases
 alias zshconfig="cat ~/.zshrc | $PAGER"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# TODO: make it work with dotnet (without alias)
+# zsh parameter completion for the dotnet CLI
+# https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
+_dotnet_zsh_complete()
+{
+  local completions=("$(dn complete "$words")")
+
+  reply=( "${(ps:\n:)completions}" )
+}
+
+# compctl -K _dotnet_zsh_complete dotnet
+compctl -K _dotnet_zsh_complete dn
 
 source_shell_files() {
     declare -r CURRENT_DIRECTORY="$(pwd)"

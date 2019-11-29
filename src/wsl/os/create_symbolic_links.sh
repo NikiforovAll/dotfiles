@@ -9,6 +9,7 @@ create_symlinks() {
 
     declare -a FILES_TO_SYMLINK=(
 
+        "shell/bashrc"
         "shell/shell_aliases"
         "shell/shell_functions"
         "shell/bash_autocomplete"

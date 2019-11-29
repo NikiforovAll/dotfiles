@@ -96,23 +96,19 @@ main() {
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # TODO: change this, this mofo is dangerous
     find . -name "*.sh" -exec chmod +x {} +
-    # sudo chmod +x ./create_directories.sh
     ./create_directories.sh
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    # ./install/main.sh
-    seek_confirmation "Warning: This step install applications."
+    print_in_purple "\n App install [/app_install.sh]"
+    seek_confirmation "   Warning: This step install applications."
     if is_confirmed; then
       # e_header "Please, configure you applications before installation:"
       # bash "$DOTFILES_DIRECTORY/app_install.sh"
-      # sudo chmod +x ./app_install.sh
       ./app_install.sh
-
     else
-      e_warning "Skipped applications install."
+      e_warning "   Skipped applications install."
     fi
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    # sudo chmod +x ./create_symbolic_links.sh "$@"
     ./create_symbolic_links.sh "$@"
 
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -685,7 +685,7 @@ install_npm_package() {
     #         && npm install --global --silent $2" \
     #     "$1"
     execute \
-        "sudo npm install --global --silent $2"
+        "sudo npm install --global --silent $2" "$1"
 
 }
 

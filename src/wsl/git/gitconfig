@@ -171,10 +171,10 @@
     insteadOf = "gist:"
 [log]
     decorate = short
-[pager]
-    color = true
-    log  = diffr | less -R
-    show = diffr | less -R
-    diff = diffr | less -R
+# [pager]
+#     color = true
+#     log  = diffr | less -R
+#     show = diffr | less -R
+#     diff = diffr | less -R
 [interactive]
     diffFilter = diffr

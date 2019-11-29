@@ -6,7 +6,7 @@ Scaffolding
 depends
 cake
 GitVersion
-DashDashVersion
+# DashDashVersion
 dotnet-search
 dotnet-serve
 dotnet-server
