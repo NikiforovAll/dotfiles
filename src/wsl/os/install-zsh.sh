@@ -16,7 +16,7 @@ install() {
     else
         print_in_yellow "\n   using local version of oh-my-zsh\n"
     fi
-    print_in_green "\n   Password default shell:"
+    print_in_green "\n   Password to change default shell to zsh:\n"
     chsh -s $(which zsh)
     ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     ZSH_THEME_TO_INSTALL="$ZSH_CUSTOM/themes/spaceship-prompt"
@@ -34,14 +34,29 @@ install() {
     install_package "zsh-syntax-highlighting" "zsh-syntax-highlighting"
 
     print_in_purple "\n   plugin.zsh-autosuggestions\n\n"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    execute "zsh-autosuggestions-install" "github.com/zsh-users/zsh-autosuggestions"
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+zsh-autosuggestions-install(){
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+}
 main() {
     print_in_purple "\n install-zsh\n"
-    seek_confirmation "   Warning: Are you sure you want to zsh? (current installation: $ZSH)"
+
+    if [ ! -f $HOME/bin/zsh ]; then
+        execute "" "zsh (already installed), $ZSH_VERSION"
+        return
+    fi
+
+    # if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
+    # # assume Zsh
+    # else [ -n "`$SHELL -c 'echo $BASH_VERSION'`" ]; then
+    # # assume Bash
+    # fi
+
+    seek_confirmation "   Warning: Are you sure you want to zsh?"
 
     if is_confirmed; then
         install

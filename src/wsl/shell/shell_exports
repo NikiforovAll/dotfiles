@@ -22,3 +22,7 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 
 # Make Python use UTF-8 encoding for output to stdin/stdout/stderr.
 export PYTHONIOENCODING="UTF-8"
+
+#--------------------------------------------------------------
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

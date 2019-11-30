@@ -1,4 +1,8 @@
 # TODOs
 
 
+* TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
+* TODO: tmux setup
+* TODO: dotfiles update run
+* TODO: packages upgrade # https://github.com/alrra/dotfiles/blob/master/src/os/utils.sh

@@ -3,8 +3,15 @@ source ./utils.sh
 
 export DEBIAN_FRONTEND=noninteractive
 
-sudo apt update
-sudo apt upgrade -y
+
+print_in_purple "\n   apt upgrade"
+seek_confirmation "   Warning: Are you sure you want to run 'sudo apt update'?\n You may want to have some tea ☕."
+if is_confirmed; then
+    # sudo apt update
+    # sudo apt upgrade -y
+    execute "sudo apt update" "apt update"
+    sudo apt upgrade -y
+fi
 
 
 #  Git
@@ -25,17 +32,15 @@ install_package "jq" "jq"
 print_in_purple "\n   xclip\n\n"
 install_package "xclip" "xclip"
 
-print_in_purple "\n   unzip\n\n"
-install_package "zip" "unzip"
+print_in_purple "\n   zip\n\n"
 install_package "zip" "zip"
+install_package "zip" "unzip"
 
 
 print_in_purple "\n   python\n\n"
 install_package "python" "python"
-install_package "python-pip" "python-pip"
+install_package "python-pip" "python-pip -y"
 
-print_in_purple "\n   shellCheck\n\n"
-install_package "ShellCheck" "shellcheck"
 # print_in_purple "\n   Rust compiler & package manager\n\n"
 
 # execute "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash /dev/stdin -y"
@@ -46,7 +51,14 @@ install_package "ShellCheck" "shellcheck"
 # execute "cargo install diffr"
 
 print_in_purple "\n   vim\n\n"
-install_package "GNOME Vim" "vim-gnome"
+install_package "vim" "vim-gnome -y"
+
+print_in_purple "\n   tmux\n\n"
+install_package "tmux" "tmux"
+
+
+print_in_purple "\n   shell-check\n\n"
+install_package "ShellCheck" "shellcheck"
 
 print_in_purple "\n   node\n\n"
 if which node > /dev/null
@@ -83,6 +95,9 @@ else
     execute "" "jira-cmd (already installed)"
 fi
 
+# Ruby
+./install-ruby.sh
+# Exa (list your files in a cool way)
 EXA_BUILD="exa-linux-x86_64"
 print_in_purple "\n   $EXA_BUILD\n\n"
 EXA_FILENAME="exa-linux-x86_64-0.9.0.zip"

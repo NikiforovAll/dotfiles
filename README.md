@@ -1,13 +1,15 @@
 Dotfiles for Windows (Windows Terminal, WSL, ZSH)
 ============================================================
 
+Facilitates developing with WSL. Installs major dependencies and handy tools for .NET developer.
+
 Goals of this setup
 -------------------
 
 - target platform: Windows 10
 - visually nice terminal: Windows Terminal
 - vscode: settings sync
-- app-install: install essentials tools/utilities/programs
+- app-install: install essentials - tools/utilities/programs
 - main shell: zsh
 - shell: powershell + oh-my-posh + custom theme
 - shell: git bash
