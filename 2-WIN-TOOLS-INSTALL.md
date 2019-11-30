@@ -8,10 +8,9 @@ To install dev essentials:
 * PowerShell
 * Git
 * vscode
-* Fonts: FiraCode, CascadiaCode
-* dotnet (windows, wsl)
-* dotnet global tools (windows, wsl)
-* docker (wsl - ? TODO:)
+* dotnet
+* dotnet global tools
+* docker
 
 ## Prerequisites
 
@@ -56,9 +55,6 @@ In each environnement set up:
 git config --global user.email "${email}"
 git config --global user.name "${username}"
 ```
-* git config - ? TODO:
-  * .gitconfig
-* git aliases (general and zsh specifi) TODO:
 
 ## vscode
 

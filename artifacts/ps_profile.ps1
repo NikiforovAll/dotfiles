@@ -44,3 +44,5 @@ If (Test-Path Alias:curl) {Remove-Item Alias:curl}
 
 # Set theme
 Set-Theme SpencerTechy
+
+# TODO: git config for windows/ps/gitbash env

@@ -3,8 +3,6 @@ source ./utils.sh
 
 install_dotnet_sdk() {
     curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin --channel LTS
-    # TODO: FIX dotnet is not added to path
-    export PATH="$PATH:$HOME/.dotnet"
 }
 
 install_dotnet_global_tools() {

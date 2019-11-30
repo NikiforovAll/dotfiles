@@ -469,7 +469,7 @@ is_supported_version() {
     #     fi
 
     # done
-    return 0; # TODO: fix it
+    return 0;
 }
 
 mkd() {

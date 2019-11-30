@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/nikiforovall/.oh-my-zsh"
 
+# https://github.com/denysdovhan/spaceship-prompt
 ZSH_THEME="spaceship"
 SPACESHIP_EXIT_CODE_SHOW=true
 SPACESHIP_PROMPT_ORDER=(
@@ -14,7 +15,7 @@ SPACESHIP_PROMPT_ORDER=(
   git           # Git section (git_branch + git_status)
   package       # Package version
   node          # Node.js section
-  docker        # Docker section
+#   docker        # Docker section
   exec_time     # Execution time
   line_sep      # Line break
   battery       # Battery level and status
@@ -23,7 +24,8 @@ SPACESHIP_PROMPT_ORDER=(
 )
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_RPROMPT_ORDER=(
-    dotnet
+    # dotnet
+    docker
     time          # Time stamps section
 )
 
@@ -65,49 +67,32 @@ plugins=(
 )
 # TODO:
 # https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
-# fpath+=($ZSH/plugins/docker)
-# autoload -U compinit && compinit
+fpath+=($ZSH/plugins/docker)
+autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
 
-# not the best way to reference this guy TODO: change.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-alias zshconfig="cat ~/.zshrc | $PAGER"
-
-# TODO: make it work with dotnet (without alias)
 # zsh parameter completion for the dotnet CLI
 # https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
 _dotnet_zsh_complete()
 {
-  local completions=("$(dn complete "$words")")
+  local completions=("$(dotnet complete "$words")")
 
   reply=( "${(ps:\n:)completions}" )
 }
-
-# compctl -K _dotnet_zsh_complete dotnet
-compctl -K _dotnet_zsh_complete dn
+compctl -K _dotnet_zsh_complete dotnet
 
 source_shell_files() {
-    declare -r CURRENT_DIRECTORY="$(pwd)"
+    # declare -r CURRENT_DIRECTORY="$(pwd)"
     declare -r -a FILES_TO_SOURCE=(
         "shell_aliases"
         "shell_functions"
+        "shell_exports"
         # "bash.local"
     )
-    # local file=""
-    # local i=""
-    # for i in ${!FILES_TO_SOURCE[*]}; do
     for i in $FILES_TO_SOURCE; do
         file="$HOME/.$i"
         [ -r "$file" ] \
@@ -115,8 +100,10 @@ source_shell_files() {
     done
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    cd "$CURRENT_DIRECTORY"
+    # cd "$CURRENT_DIRECTORY"
 }
 
 source_shell_files
 unset -f source_shell_files
+
+alias zshconfig="cat ~/.zshrc | $PAGER"

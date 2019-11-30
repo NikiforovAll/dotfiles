@@ -6,11 +6,11 @@ sudo apt-get install  curl apt-transport-https ca-certificates software-properti
 
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" - y
 
     sudo apt update
 
-    sudo apt install docker-ce
+    sudo apt install docker-ce -y
 
     sudo usermod -aG docker $USER
 
@@ -25,7 +25,8 @@ main() {
     seek_confirmation "   Warning: Are you sure you want to install docker?"
     if is_confirmed; then
         echo "\n"
-        execute "install" "docker"
+        # execute "install" "docker"
+        install
     else
         e_warning "   Skipped [install-docker] installation step."
     fi

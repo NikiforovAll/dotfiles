@@ -3,9 +3,8 @@ source ./utils.sh
 
 export DEBIAN_FRONTEND=noninteractive
 
-# TODO: uncomment this
-# sudo apt update
-# sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 
 
 #  Git
@@ -13,16 +12,6 @@ print_in_purple "\n   git\n\n"
 install_package "Git" "git"
 # ZSH
 ./install-zsh.sh
-
-print_in_purple "\n   unzip\n\n"
-install_package "zip" "unzip"
-install_package "zip" "zip"
-
-print_in_purple "\n   shellCheck\n\n"
-install_package "ShellCheck" "shellcheck"
-
-print_in_purple "\n   xclip\n\n"
-install_package "xclip" "xclip"
 
 print_in_purple "\n   curl\n\n"
 install_package "curl" "curl"
@@ -33,10 +22,20 @@ install_package "tree" "tree"
 print_in_purple "\n   jq\n\n"
 install_package "jq" "jq"
 
+print_in_purple "\n   xclip\n\n"
+install_package "xclip" "xclip"
+
+print_in_purple "\n   unzip\n\n"
+install_package "zip" "unzip"
+install_package "zip" "zip"
+
+
 print_in_purple "\n   python\n\n"
 install_package "python" "python"
 install_package "python-pip" "python-pip"
 
+print_in_purple "\n   shellCheck\n\n"
+install_package "ShellCheck" "shellcheck"
 # print_in_purple "\n   Rust compiler & package manager\n\n"
 
 # execute "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash /dev/stdin -y"
@@ -46,7 +45,7 @@ install_package "python-pip" "python-pip"
 # # Diff tool
 # execute "cargo install diffr"
 
-print_in_purple "\n   GNOME vim\n\n"
+print_in_purple "\n   vim\n\n"
 install_package "GNOME Vim" "vim-gnome"
 
 print_in_purple "\n   node\n\n"
