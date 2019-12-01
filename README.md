@@ -1,7 +1,7 @@
 Dotfiles for Windows (Windows Terminal, WSL, ZSH)
 ============================================================
 
-Facilitates developing with WSL. Installs major dependencies and handy tools for .NET developer.
+Facilitates development with WSL. Installs major dependencies and handy tools for .NET developer.
 
 Goals of this setup
 -------------------
@@ -35,4 +35,8 @@ To install the `dotfiles` run the next snippet in the terminal:
 Resources
 -------------------
 
-Demo: For more details please see related blog post: <https://nikiforovall.github.io/productivity/2019/11/30/nikiforovall-setup.html>
+**Demo:** For more details please see related blog post: <https://nikiforovall.github.io/productivity/2019/11/30/nikiforovall-setup.html>
+
+![setup-3](artifacts/test3.gif)
+
+![setup-4](artifacts/test4.gif)

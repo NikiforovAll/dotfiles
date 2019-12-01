@@ -29,7 +29,6 @@ install() {
     rbenv install 2.5.1
     rbenv global 2.5.1
 
-    gem install bundler
 
 }
 
@@ -42,7 +41,10 @@ main() {
         # execute "install" "ruby; ruby.bundler"
         install
         # https://github.com/bundler/bundler/issues/5211
+
+        execute "gem install bundler" "gem.bundler"
         execute "gem install jekyll" "gem.jekyll"
+
         # install
     else
         e_warning "   Skipped [install-ruby] installation step."
