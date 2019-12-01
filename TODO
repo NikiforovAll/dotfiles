@@ -1,11 +1,8 @@
 # TODOs
 
-* TODO: 🔥 fix elevated permissions during installation
-* TODO: 🔥 set up git repository after installation
+* TODO: fix elevated permissions during installation
+* TODO: set up git repository after installation
   * https://github.com/alrra/dotfiles/blob/master/src/os/initialize_git_repository.sh
-* TODO: 🔥 add support for git.local file to handle user.name and user.email in ignored file in repo
-  * https://github.com/alrra/dotfiles#gitconfiglocal
-  * https://github.com/alrra/dotfiles/blob/eaeecbc9e6c8c0911bc5961df81f79330a4c6578/src/git/gitconfig
 * TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
 * TODO: .log file for whole process

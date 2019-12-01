@@ -32,6 +32,28 @@ To install the `dotfiles` run the next snippet in the terminal:
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
 
+#### `~/.gitconfig.local`
+
+The `~/.gitconfig.local` file will be automatically included after
+the configurations from `~/.gitconfig`, thus, allowing its content
+to overwrite or add to the existing `Git` configurations.
+
+__Note:__ Use `~/.gitconfig.local` to store sensitive information
+such as the `Git` user credentials, e.g.:
+
+```bash
+[commit]
+    # Sign commits using GPG.
+    # https://help.github.com/articles/signing-commits-using-gpg/
+    gpgsign = true
+
+[user]
+
+    name = <name>
+    email = <account@example.com>
+    signingkey = XXXXXXXX
+```
+
 Resources
 -------------------
 
