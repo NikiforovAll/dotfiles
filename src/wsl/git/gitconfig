@@ -178,3 +178,6 @@
 #     diff = diffr | less -R
 [interactive]
     diffFilter = diffr
+[user]
+	email = nikiforovalekcey@gmail.com
+	name = NikiforovAll

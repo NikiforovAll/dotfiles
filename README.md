@@ -36,3 +36,8 @@ Resources
 -------------------
 
 Demo: For more details please see related blog post: <https://nikiforovall.github.io/productivity/2019/11/30/nikiforovall-setup.html>
+
+Credits:
+-------------------
+
+Checkout out this awesome dotfile repository: <https://github.com/alrra/dotfiles>
