@@ -11,3 +11,4 @@
 * TODO: dotfiles update run
 * TODO: packages upgrade # https://github.com/alrra/dotfiles/blob/master/src/os/utils.sh
 * TODO: add more advanced diff tool
+* TODO: add open github origin repo alias
