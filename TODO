@@ -1,9 +1,13 @@
 # TODOs
 
-* set up git repository after instllation
+* TODO: 🔥 fix elevated permissions during installation
+* TODO: 🔥 set up git repository after installation
+  * https://github.com/alrra/dotfiles/blob/master/src/os/initialize_git_repository.sh
+* TODO: 🔥 add support for git.local file to handle user.name and user.email in ignored file in repo
 * TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
+* TODO: .log file for whole process
 * TODO: tmux setup
 * TODO: dotfiles update run
 * TODO: packages upgrade # https://github.com/alrra/dotfiles/blob/master/src/os/utils.sh
-    https://github.com/alrra/dotfiles/blob/master/src/os/initialize_git_repository.sh
+* TODO: add more advanced diff tool
