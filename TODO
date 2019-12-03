@@ -10,5 +10,7 @@
 * TODO: dotfiles update run
 * TODO: packages upgrade # https://github.com/alrra/dotfiles/blob/master/src/os/utils.sh
 * TODO: add more advanced diff tool
-* TODO: add open github origin repo alias
 * TODO: process https://github.com/gitalias/gitalias
+* TODO: prepare approach how to work with line endings
+  *https://stackoverflow.com/questions/20496084/git-status-ignore-line-endings-identical-files-windows-linux-environment
+* TODO: git config for windows/ps/gitbash env (automatically setup, currently you have to copy it manually to ~/.gitconfig)

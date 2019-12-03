@@ -19,26 +19,9 @@ To install dev essentials:
 
 > Run `.\wsl\app_install.sh`.
 
+## Fonts
 
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#extract>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#last-working-dir>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#command-not-found>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#common-aliases>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#copyfile>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#docker>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#encode64>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#git>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#ng>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#sudo>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#tmux>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#vscode>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#z>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#history>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#jsontools>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#npm>
-* <https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#git-flow>
+Info: <https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx>
 
 ## dotnet global tools
 
