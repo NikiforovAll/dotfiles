@@ -64,6 +64,7 @@ plugins=(
     git-flow
     # zsh-syntax-highlighting (like in fish shell)
     zsh-autosuggestions
+    git-open
 )
 # TODO:
 # https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working

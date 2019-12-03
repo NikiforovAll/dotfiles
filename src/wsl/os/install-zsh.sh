@@ -43,10 +43,13 @@ install() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 zsh-autosuggestions-install(){
+    #https://github.com/zsh-users/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 zsh-git-open-install() {
+    # https://github.com/paulirish/git-open
+    # also, this one should be added to plugins seciton as git-open
     git clone https://github.com/paulirish/git-open ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
 }
 

@@ -27,7 +27,7 @@ alias local-ip="ifconfig \
                     | cut -d' ' -f1"
 
 alias dn="~/.dotnet/dotnet"
-
+alias peek_shell_config="less ~/.shell_aliases ~/.shell_functions ~/.gitconfig"
 ## npm aliases
 alias ni="npm install";
 alias nrs="npm run start -s --";
