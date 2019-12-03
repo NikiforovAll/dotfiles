@@ -181,3 +181,15 @@ ghpr() {
     echo 'failed to open a pull request.';
   fi
 }
+
+# alias evernote="python -mwebbrowser 'https://www.evernote.com/client/web?login=true' &2>/dev/null"
+# alias evernote="openBrowser 'https://www.evernote.com/client/web?login=true'"
+evernote() {
+    BASE_URL='https://www.evernote.com/client/web?login=true'
+    #do things with parameters like $1 such as
+    if [ -z "$1" ]; then
+        openBrowser $BASE_URL
+    else
+        openBrowser "$BASE_URL#?&query=$(echo $@ | urlencode_json)"
+    fi
+}
