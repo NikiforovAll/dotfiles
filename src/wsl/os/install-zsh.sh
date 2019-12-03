@@ -34,7 +34,10 @@ install() {
     install_package "zsh-syntax-highlighting" "zsh-syntax-highlighting"
 
     print_in_purple "\n   plugin.zsh-autosuggestions\n\n"
-    execute "zsh-autosuggestions-install" "github.com/zsh-users/zsh-autosuggestions"
+    execute "zsh-autosuggestions-install" "zsh-autosuggestions"
+
+    print_in_purple "\n   plugin.zsh-git-open\n\n"
+    execute "zsh-git-open-install" "zsh.git-open"
 }
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -42,6 +45,11 @@ install() {
 zsh-autosuggestions-install(){
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
+
+zsh-git-open-install() {
+    git clone https://github.com/paulirish/git-open ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
+}
+
 main() {
     print_in_purple "\n install-zsh\n"
 

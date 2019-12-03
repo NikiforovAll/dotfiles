@@ -27,6 +27,8 @@ alias local-ip="ifconfig \
                     | cut -d' ' -f1"
 
 alias dn="~/.dotnet/dotnet"
+# alias evernote="python -mwebbrowser 'https://www.evernote.com/client/web?login=true' &2>/dev/null"
+alias evernote="openBrowser 'https://www.evernote.com/client/web?login=true'"
 
 ## npm aliases
 alias ni="npm install";
@@ -44,3 +46,4 @@ alias dockerstop='docker-compose stop'
 alias dockerrestart='docker-compose restart'
 alias dockerup='docker-compose up -d'
 alias dockerrm='docker-compose rm --all'
+

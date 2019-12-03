@@ -230,7 +230,6 @@
       "closeOnExit": true,
       "fontSize": 12,
       "padding": "25, 25, 25, 25",
-      // "source": "C:\\Windows\\System32\\wsl.exe -d Ubuntu-18.04",
       "commandline": "wsl",
       "startingDirectory": "%dev%"
     },

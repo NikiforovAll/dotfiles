@@ -1,4 +1,4 @@
-#requires -Version 2 -Modules posh-git
+﻿#requires -Version 2 -Modules posh-git
 
 function Write-Theme {
     param(

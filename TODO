@@ -1,9 +1,14 @@
 # TODOs
 
-
+* TODO: fix elevated permissions during installation
+* TODO: set up git repository after installation
+  * https://github.com/alrra/dotfiles/blob/master/src/os/initialize_git_repository.sh
 * TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
 * TODO: .log file for whole process
 * TODO: tmux setup
 * TODO: dotfiles update run
 * TODO: packages upgrade # https://github.com/alrra/dotfiles/blob/master/src/os/utils.sh
+* TODO: add more advanced diff tool
+* TODO: add open github origin repo alias
+* TODO: process https://github.com/gitalias/gitalias

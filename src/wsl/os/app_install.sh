@@ -110,5 +110,5 @@ sudo mv "/tmp/$EXA_BUILD" /usr/local/bin/exa
 # docker
 ./install-docker.sh
 
-# TODO: apply this fix if needed in proper place
+# TODO: apply this fix if needed in proper place (Permission denied fix)
 # sudo chown -R $(whoami) /home/nikiforovall/.config/

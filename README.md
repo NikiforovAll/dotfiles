@@ -32,6 +32,34 @@ To install the `dotfiles` run the next snippet in the terminal:
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
 
+
+#### `~/.gitconfig.local`
+
+The `~/.gitconfig.local` file will be automatically included after
+the configurations from `~/.gitconfig`, thus, allowing its content
+to overwrite or add to the existing `Git` configurations.
+
+__Note:__ Use `~/.gitconfig.local` to store sensitive information
+such as the `Git` user credentials, e.g.:
+
+```bash
+[commit]
+    # Sign commits using GPG.
+    # https://help.github.com/articles/signing-commits-using-gpg/
+    gpgsign = true
+
+[user]
+    name = <name>
+    email = <account@example.com>
+    signingkey = XXXXXXXX
+
+# https://git-scm.com/docs/gitcredentials
+# https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line
+# https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+# [credential]
+#     helper = cache
+```
+
 Resources
 -------------------
 
@@ -40,3 +68,14 @@ Resources
 ![setup-3](artifacts/test3.gif)
 
 ![setup-4](artifacts/test4.gif)
+
+
+Resources
+-------------------
+
+Demo: For more details please see related blog post: <https://nikiforovall.github.io/productivity/2019/11/30/nikiforovall-setup.html>
+
+Credits:
+-------------------
+
+Checkout out this awesome dotfile repository: <https://github.com/alrra/dotfiles>
