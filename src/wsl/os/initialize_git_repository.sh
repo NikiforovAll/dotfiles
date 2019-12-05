@@ -26,6 +26,8 @@ initialize_git_repository() {
 main() {
     print_in_purple "\n   Initialize Git repository\n\n"
     initialize_git_repository "$1"
+    print_in_yellow "   Please update refs by running:\n"
+    print_in_yellow "      git fetch --all\n"
 }
 
 main "$1"

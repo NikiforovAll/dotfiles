@@ -1,7 +1,5 @@
 # TODOs
 
-* TODO: set up git repository after installation
-  * https://github.com/alrra/dotfiles/blob/master/src/os/initialize_git_repository.sh
 * TODO: fix elevated permissions during installation
 * TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
