@@ -11,7 +11,7 @@ source_shell_files() {
         "bash_autocomplete"
         "bash_options"
         "bash_prompt"
-        # "bash.local"
+        "bash.local"
     )
 
     local file=""

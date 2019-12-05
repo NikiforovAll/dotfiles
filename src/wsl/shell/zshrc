@@ -92,7 +92,7 @@ source_shell_files() {
         "shell_aliases"
         "shell_functions"
         "shell_exports"
-        # "bash.local"
+        "zshrc.local"
     )
     for i in $FILES_TO_SOURCE; do
         file="$HOME/.$i"
@@ -106,5 +106,3 @@ source_shell_files() {
 
 source_shell_files
 unset -f source_shell_files
-
-alias zshconfig="cat ~/.zshrc | $PAGER"

@@ -1,28 +1,6 @@
 
 #!/bin/bash
 
-# Create data URI from a file.
-
-datauri() {
-
-    local mimeType=""
-
-    if [ -f "$1" ]; then
-        mimeType=$(file -b --mime-type "$1")
-        #                └─ do not prepend the filename to the output
-
-        if [[ $mimeType == text/* ]]; then
-            mimeType="$mimeType;charset=utf-8"
-        fi
-
-        printf "data:%s;base64,%s" \
-                    "$mimeType" \
-                    "$(openssl base64 -in "$1" | tr -d "\n")"
-    else
-        printf "%s is not a file.\n" "$1"
-    fi
-
-}
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Delete files that match a certain pattern from the current directory.
 delete-files() {
@@ -59,6 +37,28 @@ gz() {
         printf "\"%s\" is not a file.\n" "$1"
     fi
 }
+# Create data URI from a file.
+datauri() {
+
+    local mimeType=""
+
+    if [ -f "$1" ]; then
+        mimeType=$(file -b --mime-type "$1")
+        #                └─ do not prepend the filename to the output
+
+        if [[ $mimeType == text/* ]]; then
+            mimeType="$mimeType;charset=utf-8"
+        fi
+
+        printf "data:%s;base64,%s" \
+                    "$mimeType" \
+                    "$(openssl base64 -in "$1" | tr -d "\n")"
+    else
+        printf "%s is not a file.\n" "$1"
+    fi
+
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Human readable file size
 # (because `du -h` doesn't cut it for me).

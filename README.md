@@ -32,15 +32,11 @@ To install the `dotfiles` run the next snippet in the terminal:
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
 
+### `~/.*.local`
 
-#### `~/.gitconfig.local`
+The `~/.gitconfig.local` file will be automatically included after the configurations from `~/.gitconfig`, thus, allowing its content to overwrite or add to the existing `Git` configurations.
 
-The `~/.gitconfig.local` file will be automatically included after
-the configurations from `~/.gitconfig`, thus, allowing its content
-to overwrite or add to the existing `Git` configurations.
-
-__Note:__ Use `~/.gitconfig.local` to store sensitive information
-such as the `Git` user credentials, e.g.:
+__Note:__ Use `~/.gitconfig.local` to store sensitive information such as the `Git` user credentials, e.g.:
 
 ```bash
 [commit]
@@ -59,6 +55,7 @@ such as the `Git` user credentials, e.g.:
 # [credential]
 #     helper = cache
 ```
+__Note:__ Use `~/.zshrc.local` or `bash.local` for shells.
 
 Resources
 -------------------
@@ -69,13 +66,29 @@ Resources
 
 ![setup-4](artifacts/test4.gif)
 
-
 Resources
 -------------------
 
 Demo: For more details please see related blog post: <https://nikiforovall.github.io/productivity/2019/11/30/nikiforovall-setup.html>
 
-Credits:
+My favorite aliases/functions:
+
+- ddg - search in duckDuckGo browser
+- evernote - login and search in evernote
+- g - git
+- dn - dotnet
+- peek_shell_config - see configs in less
+- ghpr - open github pull request page for current repo
+- qh - search command history
+- qt - search current directory
+- q - exit
+- path - list path
+- map - `"xargs -n1"`
+- mkd - make directory and cd
+- delete-files - delete files that match a certain pattern from the current directory.
+-
+
+Credits
 -------------------
 
 Checkout out this awesome dotfile repository: <https://github.com/alrra/dotfiles>

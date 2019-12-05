@@ -14,3 +14,4 @@
 * TODO: process https://github.com/gitalias/gitalias
   *https://stackoverflow.com/questions/20496084/git-status-ignore-line-endings-identical-files-windows-linux-environment
 * TODO: git config for windows/ps/gitbash env (automatically setup, currently you have to copy it manually to ~/.gitconfig)
+* TODO: `go get` installer
