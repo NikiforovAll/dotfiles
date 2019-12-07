@@ -17,6 +17,8 @@
     c = commit -m                     # commit with message
     ca = commit -am                   # commit all with message
     cam = commit -am                  # "same as ca"
+
+    rbi = rebase --interactive @{upstream}
     ci = commit                       # commit
     # ============================ Branch
     b = branch
@@ -38,6 +40,8 @@
     # First argument is remote name. Defaults to "origin".
     # Second, third and fourth argument are passed to `git push`.
     publish = "!p() { [ -z \"$1\" ] && remote=\"origin\" || remote=$1; git push --set-upstream $2 $3 $4 $remote HEAD; }; p"
+    # publish = "!git push -u origin $(git branch-name)"
+    unpublish = "!git push origin :$(git branch-name)"
     # Shorthand for remote (verbose)
     r = remote -v
     # ============================Status
@@ -97,6 +101,7 @@
     log-pretty = log --graph --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %aE>%Creset' --abbrev-commit
     # Pretty log of commits from origin/master
     log-origin-master = log --decorate --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an - %aE>%Creset' --abbrev-commit --no-merges origin/master
+    log-my-week = !git log --author $(git config user.email) --since "1 week ago"
     # last commit
     last = log -1 HEAD
     # ==============================Find
@@ -110,6 +115,7 @@
     ft = "!f() { git describe --always --contains $1; }; f"
     # find a string in the entire git history
     search-git-history = "!r() { git rev-list --all | xargs git grep -F $1; }; r"
+    grep-group =  "grep --break --heading --line-number"
     #find all direct children of given refs
     #code borrowed from https://gist.github.com/kohsuke/7590246
     child = "!f() { for arg in \"$@\"; do for commit in $(git rev-parse $arg^0); do for child in $(git log --format='%H %P' --all | grep -F \" $commit\" | cut -f1 -d' '); do git describe $child 2> /dev/null || echo $child; done; done; done; }; f"
