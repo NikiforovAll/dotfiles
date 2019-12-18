@@ -197,6 +197,42 @@
         "keys": [
           "ctrl+\\"
         ]
+      },
+      {
+        "command": {
+          "action": "resizePane",
+          "direction": "down"
+        },
+        "keys": [
+          "alt+shift+down"
+        ]
+      },
+      {
+        "command": {
+          "action": "resizePane",
+          "direction": "left"
+        },
+        "keys": [
+          "alt+shift+left"
+        ]
+      },
+      {
+        "command": {
+          "action": "resizePane",
+          "direction": "right"
+        },
+        "keys": [
+          "alt+shift+right"
+        ]
+      },
+      {
+        "command": {
+          "action": "resizePane",
+          "direction": "up"
+        },
+        "keys": [
+          "alt+shift+up"
+        ]
       }
     ],
     "requestedTheme": "system",
@@ -230,6 +266,7 @@
       "closeOnExit": true,
       "fontSize": 12,
       "padding": "25, 25, 25, 25",
+      // "source": "C:\\Windows\\System32\\wsl.exe -d Ubuntu-18.04",
       "commandline": "wsl",
       "startingDirectory": "%dev%"
     },
@@ -258,7 +295,7 @@
     },
     {
       "guid": "{c6eaf9f4-32a7-5fdc-b5cf-066e8a4b1e40}",
-      "hidden": true,
+      "hidden": false,
       "name": "Ubuntu-18.04",
       "source": "Windows.Terminal.Wsl"
     },

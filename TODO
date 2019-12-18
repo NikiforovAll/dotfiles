@@ -1,6 +1,7 @@
 # TODOs
 
 * TODO: fix elevated permissions during installation
+* TODO: add https://github.com/junegunn/fzf to core installation
 * TODO: force install (with -y flag on top level)
 * TODO: allow to specify git branch name during installation of dotfiles repo
 * TODO: .log file for whole process

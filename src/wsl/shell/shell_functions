@@ -193,3 +193,11 @@ evernote() {
         openBrowser "$BASE_URL#?&query=$(echo $@ | urlencode_json)"
     fi
 }
+
+function gitstash() {
+    git stash push -m "zsh_stash_name_$1"
+}
+
+function gitstashapply() {
+    git stash apply $(git stash list | grep "zsh_stash_name_$1" | cut -d: -f1)
+}
