@@ -24,5 +24,3 @@ export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 export PYTHONIOENCODING="UTF-8"
 
 #--------------------------------------------------------------
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"

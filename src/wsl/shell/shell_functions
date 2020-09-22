@@ -152,10 +152,10 @@ function openBrowser() {
               # we just can call iexplore.exe,
               # see also https://msdn.microsoft.com/en-us/commandline/wsl/interop
               if [[ "(uname -p)" == "x86_64" ]]; then
-              C:\Program\ Files\ (x86)\Google\Chrome\Application
-                  /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "$URL" 2> /dev/null
+              'C:\Program\ Files\ (x86)\Google\Chrome\Application'
+                  '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe' "$URL" 2> /dev/null
               else
-                  /mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe "$URL" 2> /dev/null
+                  '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe' "$URL" 2> /dev/null
               fi
           else
               xdg-open "$URL"
