@@ -45,3 +45,6 @@ alias dockerrestart='docker-compose restart'
 alias dockerup='docker-compose up -d'
 alias dockerrm='docker-compose rm --all'
 
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias pf='cd $(fd -t d | fzf)'
