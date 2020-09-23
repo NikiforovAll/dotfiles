@@ -14,26 +14,10 @@ create_symlinks() {
         "shell/shell_functions"
         "shell/shell_exports"
         "shell/bash_autocomplete"
-        # "shell/bash_exports"
-        # "shell/bash_logout"
         "shell/bash_options"
         "shell/bash_profile"
         "shell/bash_prompt"
-
-        # "shell/inputrc"
-
         "shell/zshrc"
-
-        "git/gitattributes"
-        "git/gitconfig"
-        "git/gitignore"
-
-
-        # "tmux/tmux.conf"
-
-        # "vim/vim"
-        # "vim/vimrc"
-
     )
 
     local i=""
