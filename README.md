@@ -1,4 +1,4 @@
-Dotfiles for Windows (Windows Terminal, WSL, ZSH)
+Dotfiles for Windows (Windows Terminal, WSL, ZSH, dev-containers)
 ============================================================
 
 Facilitates development with WSL. Installs major dependencies and handy tools for .NET developer.
@@ -31,6 +31,15 @@ To install the `dotfiles` run the next snippet in the terminal:
 | OS | Snippet |
 |:---|:---|
 | `Ubuntu` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/wsl/os/install.sh)"` |
+
+Dev-Containers
+-------------------
+
+To install the `dotfiles` run the next snippet in the terminal:
+
+| OS | Snippet |
+|:---|:---|
+| `Debian` | `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/dev-container/boot/install.sh)"` |
 
 ### `~/.*.local`
 
