@@ -18,20 +18,22 @@ SPACESHIP_PROMPT_ORDER=(
 #   docker        # Docker section
   exec_time     # Execution time
   line_sep      # Line break
-  battery       # Battery level and status
+  # battery       # Battery level and status
   exit_code     # Exit code section
   char
 )
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_RPROMPT_ORDER=(
-    # dotnet
-    docker
-    time          # Time stamps section
-)
 
+SPACESHIP_TIME_SHOW=true
+# SPACESHIP_RPROMPT_ORDER=(
+#     # dotnet
+#     # docker
+#     time          # Time stamps section
+# )
+
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins
 plugins=(
     # Extract any archive file
-    extract
+    # extract
     #Keeps track of the last used directory and automatically jumps to it for new shells. Similar to how many terminal emulators does it.
     last-working-dir
     command-not-found
@@ -49,35 +51,33 @@ plugins=(
     ng
     # _ESC_ twice: Puts sudo in front of the current command, or the last one if the command line is empty.
     sudo
-    tmux
+    # tmux
     # This plugin makes interaction between the command line and the code editor easier.
-    vscode
+    # vscode
     # Adds several commands to do web search. (e.g. google, bing, ddg)
     web-search
     # Change directory based on history for example if you previously used (aka fuzzy path expansion)
     z
     history
     # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#jsontools
-    jsontools
+    # jsontools
     # npm - adds autocompletion to npm
     npm
     git-flow
+    # TODO: CONSIDER:
     # zsh-syntax-highlighting (like in fish shell)
-    zsh-autosuggestions
-    git-open
+    # zsh-autosuggestions
+    # git-open
 )
-# TODO:
-# https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
-fpath+=($ZSH/plugins/docker)
-autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH/oh-my-zsh.sh
+
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh parameter completion for the dotnet CLI
-# https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
+
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
@@ -106,3 +106,4 @@ source_shell_files() {
 
 source_shell_files
 unset -f source_shell_files
+export ZSH_DISABLE_COMPFIX=true

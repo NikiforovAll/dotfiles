@@ -5,8 +5,55 @@ declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/master"
 declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/master/src/wsl/os/utils.sh"
 declare dotfilesDirectory="$HOME/dotfiles"
-declare DOTFILES_DIRECTORY="$HOME/dotfiles"
-declare skipQuestions=false
+# declare DOTFILES_DIRECTORY="$HOME/projects/dotfiles"
+declare skipQuestions=true
+# ----------------------------------------------------------------------
+# | Helper Functions (you might want to go right to *main* part)       |
+# ----------------------------------------------------------------------
+
+download() {
+
+    local url="$1"
+    local output="$2"
+
+    if command -v "curl" &> /dev/null; then
+
+        curl -LsSo "$output" "$url" &> /dev/null
+        #     │││└─ write output to file
+        #     ││└─ show error messages
+        #     │└─ don't show the progress meter
+        #     └─ follow redirects
+
+        return $?
+
+    elif command -v "wget" &> /dev/null; then
+
+        wget -qO "$output" "$url" &> /dev/null
+        #     │└─ write output to file
+        #     └─ don't show output
+
+        return $?
+    fi
+
+    return 1
+
+}
+
+download_utils() {
+
+    local tmpFile=""
+
+    tmpFile="$(mktemp /tmp/XXXXX)"
+
+    download "$DOTFILES_UTILS_URL" "$tmpFile" \
+        && source "$tmpFile" \
+        && rm -rf "$tmpFile" \
+        && return 0
+
+   return 1
+
+}
+
 # ----------------------------------------------------------------------
 # | Main                                                               |
 # ----------------------------------------------------------------------
@@ -20,9 +67,18 @@ main() {
         || exit 1
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # Load utils
-    source ./utils.sh
-    
+    if [ -x "utils.sh" ]; then
+        . "utils.sh" || exit 1
+      # printf "Using cached utils"
+    else
+      printf "Trying to download utils..."
+      download_utils || exit 1
+    fi
+    # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # source ./utils.sh
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     # Ensure the OS is supported and
     # it's above the required version.
 
@@ -56,6 +112,10 @@ main() {
         fi
         # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     fi
+    # if ! $skipQuestions; then
+    #     ./restart.sh
+    # fi
+
 }
 
 main "$@"

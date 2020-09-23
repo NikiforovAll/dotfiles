@@ -165,6 +165,8 @@
     # [!] DO NOT store sensitive information such as the Git user
     # credentials (`name` / `email`), or things such as the `signingkey`
     # in this file, add them in `~/.gitconfig.local`!
+[core]
+	autocrlf = true
 [include]
     # Load local configs.
     # https://git-scm.com/docs/git-config#_includes

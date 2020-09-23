@@ -17,7 +17,13 @@ install() {
         print_in_yellow "\n   using local version of oh-my-zsh\n"
     fi
     print_in_green "\n   Password to change default shell to zsh:\n"
-    chsh -s $(which zsh)
+
+    seek_confirmation "   Warning: Change default shell to zsh?"
+
+    if is_confirmed; then
+        chsh -s $(which zsh)
+    fi
+
     ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
     ZSH_THEME_TO_INSTALL="$ZSH_CUSTOM/themes/spaceship-prompt"
     ZSH_THEME_TO_SYMLINK="$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -56,10 +62,10 @@ zsh-git-open-install() {
 main() {
     print_in_purple "\n install-zsh\n"
 
-    if [ ! -f $HOME/bin/zsh ]; then
-        execute "" "zsh (already installed), $ZSH_VERSION"
-        return
-    fi
+    # if [ ! -f $HOME/bin/zsh ]; then
+    #     execute "" "zsh (already installed), $ZSH_VERSION"
+    #     return
+    # fi
 
     # if [ -n "`$SHELL -c 'echo $ZSH_VERSION'`" ]; then
     # # assume Zsh
