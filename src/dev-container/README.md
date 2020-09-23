@@ -1,6 +1,6 @@
 # Dotfile for dev-containers
 
-# Install 
+## Install
 
 `bash -c "$(wget -qO - https://raw.github.com/nikiforovall/dotfiles/master/src/dev-container/boot/install.sh)"`
 
