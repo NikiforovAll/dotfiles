@@ -1,0 +1,51 @@
+#!/bin/bash
+
+source_shell_files() {
+
+    declare -r CURRENT_DIRECTORY="$(pwd)"
+
+    declare -r -a FILES_TO_SOURCE=(
+        "shell_aliases"
+        "shell_functions"
+        "shell_exports"
+        "bash_autocomplete"
+        "bash_options"
+        "bash_prompt"
+        "bash.local"
+    )
+
+    local file=""
+    local i=""
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    # cd "$(dirname "$(readlink "${BASH_SOURCE[0]}")")" \
+    #     && . "../os/utils.sh"
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    echo $file
+    for i in ${!FILES_TO_SOURCE[*]}; do
+
+        file="$HOME/.${FILES_TO_SOURCE[$i]}"
+        [ -r "$file" ] \
+            && . "$file"
+
+    done
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    cd "$CURRENT_DIRECTORY"
+
+}
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+source_shell_files
+unset -f source_shell_files
+
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# Clear system messages (system copyright notice, the date
+# and time of the last login, the message of the day, etc.).
+
+# clear
