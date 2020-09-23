@@ -39,7 +39,7 @@ create_symlinks() {
     local i=""
     local sourceFile=""
     local targetFile=""
-    local skipQuestions=false
+    local skipQuestions=true
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

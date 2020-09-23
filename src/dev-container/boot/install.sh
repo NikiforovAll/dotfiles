@@ -102,7 +102,7 @@ main() {
 
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    ./create_local_config_files.sh
+    ./create_local_config_files.sh "$@"
 
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     if cmd_exists "git"; then
