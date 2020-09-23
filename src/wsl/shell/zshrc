@@ -64,6 +64,8 @@ plugins=(
     git-flow
     # zsh-syntax-highlighting (like in fish shell)
     zsh-autosuggestions
+
+    # https://github.com/paulirish/git-open
     git-open
 )
 # TODO:

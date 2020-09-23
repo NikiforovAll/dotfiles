@@ -5,7 +5,7 @@ declare -r DOTFILES_ORIGIN="git@github.com:$GITHUB_REPOSITORY.git"
 declare -r DOTFILES_TARBALL_URL="https://github.com/$GITHUB_REPOSITORY/tarball/master"
 declare -r DOTFILES_UTILS_URL="https://raw.githubusercontent.com/$GITHUB_REPOSITORY/master/src/wsl/os/utils.sh"
 declare dotfilesDirectory="$HOME/dotfiles"
-# declare DOTFILES_DIRECTORY="$HOME/projects/dotfiles"
+declare DOTFILES_DIRECTORY="$HOME/dotfiles"
 declare skipQuestions=true
 # ----------------------------------------------------------------------
 # | Helper Functions (you might want to go right to *main* part)       |

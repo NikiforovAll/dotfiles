@@ -2,7 +2,11 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+if [ "${USERNAME}" = "root" ]; then
+  export ZSH="/root/.oh-my-zsh"
+else
+  export ZSH="~/.oh-my-zsh"
+fi
 
 # https://github.com/denysdovhan/spaceship-prompt
 ZSH_THEME="spaceship"
@@ -64,8 +68,9 @@ plugins=(
     # npm - adds autocompletion to npm
     npm
     git-flow
-    # TODO: CONSIDER:
     # zsh-syntax-highlighting (like in fish shell)
+    zsh-syntax-highlighting
+    # TODO: CONSIDER:
     # zsh-autosuggestions
     # git-open
 )

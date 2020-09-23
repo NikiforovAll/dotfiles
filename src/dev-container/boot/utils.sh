@@ -64,7 +64,7 @@ replace() {
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-declare dotfilesDirectory="$HOME/projects/dotfiles"
+declare dotfilesDirectory="$HOME/dotfiles"
 declare skipQuestions=false
 
 # ----------------------------------------------------------------------
