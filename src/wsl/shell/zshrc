@@ -35,7 +35,7 @@ plugins=(
     #Keeps track of the last used directory and automatically jumps to it for new shells. Similar to how many terminal emulators does it.
     last-working-dir
     command-not-found
-    #Collection of useful zsh aliases
+    #Collection of useful zsh aliases https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/common-aliases/common-aliases.plugin.zsh
     common-aliases
     # Copies content of a file into clipboard
     copyfile
@@ -62,16 +62,11 @@ plugins=(
     # npm - adds autocompletion to npm
     npm
     git-flow
-    # zsh-syntax-highlighting (like in fish shell)
     zsh-autosuggestions
-
+    zsh-syntax-highlighting
     # https://github.com/paulirish/git-open
     git-open
 )
-# TODO:
-# https://stackoverflow.com/questions/37428133/zsh-docker-plugin-not-working
-fpath+=($ZSH/plugins/docker)
-autoload -U compinit && compinit
 
 source $ZSH/oh-my-zsh.sh
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable

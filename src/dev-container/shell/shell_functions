@@ -138,62 +138,6 @@ list_shell_functions () {
 
 }
 
-function openBrowser() {
-  URL=$1
-  OS=$(uname -s)
-  case "$OS" in
-      Darwin)
-          open "$URL"
-          ;;
-      Linux)
-          if [[ "$(cat /proc/sys/kernel/osrelease)" =~ "Microsoft" ]]; then
-              # We are in bash on WSL (Windows Subsystem for Linux)
-              # We don't need a Linux-Browser and an X-Server,
-              # we just can call iexplore.exe,
-              # see also https://msdn.microsoft.com/en-us/commandline/wsl/interop
-              if [[ "(uname -p)" == "x86_64" ]]; then
-              'C:\Program\ Files\ (x86)\Google\Chrome\Application'
-                  '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe' "$URL" 2> /dev/null
-              else
-                  '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe' "$URL" 2> /dev/null
-              fi
-          else
-              xdg-open "$URL"
-          fi
-          ;;
-      Solaris)
-          /usr/dt/bin/sdtwebclient "$URL"
-          ;;
-      *)
-          printf "Not supported on %s\n" "$OS"
-          ;;
-  esac
-}
-
-# github pull request
-ghpr() {
-  if [ $? -eq 0 ]; then
-    github_url=`git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#http://#' -e 's@com:@com/@' -e 's%\.git$%%'`;
-    branch_name=`git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3`;
-    pr_url=$github_url"/compare/master..."$branch_name
-    openBrowser $pr_url;
-  else
-    echo 'failed to open a pull request.';
-  fi
-}
-
-# alias evernote="python -mwebbrowser 'https://www.evernote.com/client/web?login=true' &2>/dev/null"
-# alias evernote="openBrowser 'https://www.evernote.com/client/web?login=true'"
-evernote() {
-    BASE_URL='https://www.evernote.com/client/web?login=true'
-    #do things with parameters like $1 such as
-    if [ -z "$1" ]; then
-        openBrowser $BASE_URL
-    else
-        openBrowser "$BASE_URL#?&query=$(echo $@ | urlencode_json)"
-    fi
-}
-
 function gitstash() {
     git stash push -m "zsh_stash_name_$1"
 }

@@ -68,18 +68,17 @@ plugins=(
     # npm - adds autocompletion to npm
     npm
     git-flow
-    # zsh-syntax-highlighting (like in fish shell)
     zsh-syntax-highlighting
-    # TODO: CONSIDER:
-    # zsh-autosuggestions
-    # git-open
+    zsh-autosuggestions
 )
 
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
 
 source $ZSH/oh-my-zsh.sh
-
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# https://github.com/junegunn/fzf#files-and-directories
+# https://github.com/junegunn/fzf#key-bindings-for-command-line ⭐
+## fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zsh parameter completion for the dotnet CLI
 
