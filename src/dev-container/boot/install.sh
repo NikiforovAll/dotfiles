@@ -75,16 +75,6 @@ main() {
       download_utils || exit 1
     fi
     # # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # source ./utils.sh
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    # Ensure the OS is supported and
-    # it's above the required version.
-
-    verify_os \
-        || exit 1
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     # ask_for_sudo
     # Check if this script was run directly (./<path>/setup.sh),
     # and if not, it most likely means that the dotfiles were not
