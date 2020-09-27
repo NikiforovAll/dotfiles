@@ -56,7 +56,7 @@ plugins=(
     web-search
     # TODO: consider to get rid of it, because fasd could be used as replacement
     # Change directory based on history for example if you previously used (aka fuzzy path expansion)
-    z 
+    # z 
     fasd
     history
     # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#jsontools
@@ -107,8 +107,8 @@ source_shell_files() {
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-[[ -e "$HOME/.fzf-extras.zsh" ]] \
-    && source "$HOME/.fzf-extras.zsh" 
+[[ -e "$HOME/.fzf_extras" ]] \
+    && source "$HOME/.fzf_extras" 
 
 source_shell_files
 unset -f source_shell_files

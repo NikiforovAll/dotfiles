@@ -62,6 +62,7 @@ plugins=(
     web-search
     # Change directory based on history for example if you previously used (aka fuzzy path expansion)
     z
+    fasd
     history
     # https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins#jsontools
     # jsontools
@@ -83,8 +84,8 @@ source $ZSH/oh-my-zsh.sh
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -e "$HOME/.fzf-extras.zsh" ]] \
-    && source "$HOME/.fzf-extras/fzf-extras.zsh"
+[[ -e "$HOME/.fzf_extras.zsh" ]] \
+    && source "$HOME/.fzf_extras"
 
 # zsh parameter completion for the dotnet CLI
 

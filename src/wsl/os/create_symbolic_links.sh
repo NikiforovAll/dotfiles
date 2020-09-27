@@ -23,6 +23,7 @@ create_symlinks() {
         # "shell/inputrc"
 
         "shell/zshrc"
+        "shell/fzf_extras"
 
         "git/gitattributes"
         "git/gitconfig"

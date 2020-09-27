@@ -18,6 +18,7 @@ create_symlinks() {
         "shell/bash_profile"
         "shell/bash_prompt"
         "shell/zshrc"
+        "shell/fzf_extras"
     )
 
     local i=""
