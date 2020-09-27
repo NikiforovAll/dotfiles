@@ -69,7 +69,10 @@ plugins=(
     npm
     git-flow
     zsh-syntax-highlighting
-    zsh-autosuggestions
+    # fzf-like suggestions
+    fzf-tab
+    # fish-like suggestions
+    # zsh-autosuggestions
 )
 
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
@@ -77,8 +80,11 @@ ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can 
 source $ZSH/oh-my-zsh.sh
 # https://github.com/junegunn/fzf#files-and-directories
 # https://github.com/junegunn/fzf#key-bindings-for-command-line ⭐
+
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -e "$HOME/.fzf-extras.zsh" ]] \
+    && source "$HOME/.fzf-extras/fzf-extras.zsh"
 
 # zsh parameter completion for the dotnet CLI
 
