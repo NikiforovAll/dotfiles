@@ -84,11 +84,10 @@ source $ZSH/oh-my-zsh.sh
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ -e "$HOME/.fzf_extras.zsh" ]] \
+[[ -e "$HOME/.fzf_extras" ]] \
     && source "$HOME/.fzf_extras"
 
 # zsh parameter completion for the dotnet CLI
-
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")

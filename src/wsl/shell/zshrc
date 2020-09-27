@@ -74,7 +74,14 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 ZSH_DISABLE_COMPFIX=true #skip the verification of insecure directories you can set the variable
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+## fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -e "$HOME/.fzf_extras" ]] \
+    && source "$HOME/.fzf_extras" 
+
+# TODO: can this be replaced with corresponding plugin?
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh parameter completion for the dotnet CLI
 # https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete
@@ -104,11 +111,6 @@ source_shell_files() {
     # cd "$CURRENT_DIRECTORY"
 }
 
-## fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[[ -e "$HOME/.fzf_extras" ]] \
-    && source "$HOME/.fzf_extras" 
 
 source_shell_files
 unset -f source_shell_files
