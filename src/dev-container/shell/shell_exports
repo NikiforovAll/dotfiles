@@ -10,12 +10,14 @@ export PATH="$PATH:$HOME/.dotnet"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-export MANPAGER="less -X"
+# export MANPAGER="less -X"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Use custom `less` colors for `man` pages.
-export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
-export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
+# export LESS_TERMCAP_md="$(tput bold 2> /dev/null; tput setaf 2 2> /dev/null)"
+# export LESS_TERMCAP_me="$(tput sgr0 2> /dev/null)"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Make Python use UTF-8 encoding for output to stdin/stdout/stderr.
